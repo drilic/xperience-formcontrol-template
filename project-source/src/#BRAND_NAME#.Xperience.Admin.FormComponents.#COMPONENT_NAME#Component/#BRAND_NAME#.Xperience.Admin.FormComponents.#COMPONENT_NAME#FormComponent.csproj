@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>#NET_VERSION#</TargetFramework>
+    <AdminOrgName>#ORGANIZATION#</AdminOrgName>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdminClientPath Include="Client\dist\**">
+      <ProjectName>#PROJECT_NAME_MODULE#-component</ProjectName>
+    </AdminClientPath>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Client\node_modules\**" />
+    <EmbeddedResource Remove="Client\node_modules\**" />
+    <None Remove="Client\node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Client\webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\webpack.config.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Client\src\entry.tsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="kentico.xperience.admin" Version="#XPERIENCE_VERSION#" />
+  </ItemGroup>
+</Project>

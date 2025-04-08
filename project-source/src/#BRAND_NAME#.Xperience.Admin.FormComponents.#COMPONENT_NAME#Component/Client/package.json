@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "name": "#ORGANIZATION#-#PROJECT_NAME_MODULE#-component",
+  "description": "#COMPONENT_DESCRIPTION#",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "@kentico/xperience-admin-base": "#XPERIENCE_VERSION#",
+    "@kentico/xperience-admin-components": "#XPERIENCE_VERSION#",
+
+    "style-loader": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@kentico/xperience-webpack-config": "#XPERIENCE_VERSION#",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2",
+    "babel-loader": "^9.2.1",
+    "webpack": "5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react"
+  },
+  "browserslist": [
+    "> .2% and last 3 versions",
+    "not op_mini all",
+    "not IE 11"
+  ]
+}
