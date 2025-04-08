@@ -31,7 +31,7 @@ $placeholdersDataList = [ordered]@{
 	#Name of the new component you are working on. Don't use 'Selector' suffix (MyCustomTable)
 	$componentName = '';
 	
-    #Same as project name, lowercase and added '-' between camel case, if any. Don't use 'Component' suffix (my-custom-table)
+	#Same as project name, lowercase and added '-' between camel case, if any. Don't use 'Component' suffix (my-custom-table)
 	$projectNameModule = '';
 	
 	#Xperience By Kentico version (30.0.0)
@@ -52,7 +52,7 @@ $placeholdersDataList = [ordered]@{
    
 Write-Host "Verify that the following variables are set correctly:" -foreground 'yellow'
 Write-Host "`nPROJECT PATH:"  -NoNewLine;
-Write-Host (Get-ChildItem $projectPath -file | select -first 1).Directory -foreground 'yellow' "`n"
+Write-Host (Get-ChildItem $projectPath -file | SELECT -first 1).Directory -foreground 'yellow' "`n"
 
 $validConfiguration = $true;
 $placeholdersDataList.GetEnumerator() | ForEach-Object {
@@ -65,8 +65,8 @@ $placeholdersDataList.GetEnumerator() | ForEach-Object {
 	}
 }
 
-if(!$validConfiguration){
-	Write-Host "`nTScript execution terminated! All variables MUST be set before running the script again!" -foreground 'red' `n
+if(!$validConfiguration) {
+	Write-Host "`nScript execution terminated! All variables MUST be set before running the script again!" -foreground 'red' `n
    exit
 }
 
@@ -74,20 +74,19 @@ Write-Host "`nPress ENTER to start with setup or ESC to stop...`n"
 $key = [console]::ReadKey()
 
 if ($key.Key -eq '27') {
-   Write-Host "TScript execution terminated!" -foreground 'red' `n
+   Write-Host "Script execution terminated!" -foreground 'red' `n
    exit
 }
 
 Write-Host "Start by updating the file and folder names..." -foreground 'yellow'
-ForEach ($file in get-childitem $projectPath -recurse | Sort-Object { $_.FullName.Split('\').Length } -Descending)
-{
+ForEach ($file in Get-ChildItem $projectPath -recurse | Sort-Object { $_.FullName.Split('\').Length } -descending) {
 	$new_name = $file.Name;
 	$placeholdersDataList.GetEnumerator() | ForEach-Object {
 		$new_name = $new_name -replace $($_.Name), $($_.Value);	
 	}
 	
 	if($file.Name -ne $new_name) {
-		write-host $new_name
+		Write-Host $new_name
 		
 		Rename-Item -Path $file.FullName -NewName $new_name
 	}
@@ -95,12 +94,12 @@ ForEach ($file in get-childitem $projectPath -recurse | Sort-Object { $_.FullNam
 Write-Host "File and folder setup is complete...`n" -foreground 'green'
 
 Write-Host "Start by updating the file content..." -foreground 'yellow'
-ForEach ($file in get-childitem $projectPath -file -recurse) {
+ForEach ($file in Get-ChildItem $projectPath -file -recurse) {
 	 $placeholdersDataList.GetEnumerator() | ForEach-Object {
 		(Get-Content $file.FullName) -replace $($_.Name), $($_.Value) | Set-Content $file.FullName;
 	}
 	
-	write-host $file.Name;
+	Write-Host $file.Name;
 }
 Write-Host "File content setup is complete...`n" -foreground 'green'
 

@@ -2,7 +2,7 @@
 The Xperience form control template offers an automated solution to quickly start developing new form controls in Xperience by Kentico. The solution provides a script that modifies all necessary placeholders and configurations required for your new form control class library. In just a few steps, you can create a personalized template for your solution and start building your code.
 
 ## Requirements
-* **Xperience by Kentico 30.0.0** - It does not work for older versions of Xperience.
+* **Xperience by Kentico 30.0.0** - It has not been tested on older versions of Xperience.
 
 ## Setup flow
 1. Navigate to the _scripts_ folder
@@ -26,7 +26,7 @@ The Xperience form control template offers an automated solution to quickly star
 # to install all required packages
 npm install 
 
-# to build and start server on defined port.
+# to build and start server on defined port
 npm run start
 ```
 
