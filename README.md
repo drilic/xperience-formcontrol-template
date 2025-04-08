@@ -21,7 +21,7 @@ The Xperience form control template offers an automated solution to quickly star
 1. Rebuild the solution and verify that it builds successfully.
 1. Copy the client module settings configuration from _/project-source/appsettings.delete.json_ into the appsettings of the main project. 
 1. Here comes the fun part of developing your own component and registering the necessary dependencies, if needed. More about developing custom form components can be found in the [documentation](https://docs.kentico.com/developers-and-admins/development/builders/form-builder/form-components).
-1. After that, before building and starting the solution, run the following npm commands:
+1. After that, before building and starting the solution, run the following npm commands from _Client_ folder of newly created project:
 ```bash
 # to install all required packages
 npm install 
