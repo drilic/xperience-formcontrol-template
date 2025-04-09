@@ -1,9 +1,5 @@
 ﻿using #BRAND_NAME#.Xperience.Admin.FormComponents.#COMPONENT_NAME#Component.FormComponents;
 using Kentico.Xperience.Admin.Base.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using RegisterFormComponentAttribute = Kentico.Forms.Web.Mvc.RegisterFormComponentAttribute;
 
@@ -36,7 +32,7 @@ namespace #BRAND_NAME#.Xperience.Admin.FormComponents.#COMPONENT_NAME#Component.
         // prop name must match #COMPONENT_NAME#ComponentProperties
     }
 
-    public class #COMPONENT_NAME#ComponentProperties : Kentico.Xperience.Admin.Base.Forms.FormComponentProperties
+    public class #COMPONENT_NAME#ComponentProperties : FormComponentProperties
     {
         // prop name must match #COMPONENT_NAME#SelectorComponentAttribute
     }
