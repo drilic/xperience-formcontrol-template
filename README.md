@@ -3,6 +3,7 @@ The Xperience form control template offers an automated solution to quickly star
 
 ## Requirements
 * **Xperience by Kentico 30.0.0** - It has not been tested on older versions of Xperience.
+* **Admin development requirements** - More details in kentico [documentation](https://docs.kentico.com/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#requirements).
 
 ## Setup flow
 1. Navigate to the _scripts_ folder
